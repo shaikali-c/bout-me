@@ -13,14 +13,14 @@ export function ProjectsSection() {
         <CardBuild
           title="Private Book"
           body="Write private notes, share them securely with friends, and retain full control over your data through end to end cryptographic protection.  "
-          link="htps"
+          link="https://github.com/shaikali-c/rootedv2"
         >
           <AvatarBuildNotes />
         </CardBuild>
         <CardBuild
           title="Blockchain"
           body="Developed a fully functional blockchain prototype in modern C++ to understand distributed ledger architecture at a systems level."
-          link="htps"
+          link="https://github.com/oldddev/blockchain"
         >
           <AvatarBuildBlockchain />
         </CardBuild>
