@@ -1,0 +1,15 @@
+import { Separator } from "@/components/ui/separator";
+import { Props } from "@/types/global";
+
+export function SeperatorBuild({ children }: Props) {
+  return (
+    <div className="mx-auto flex w-full max-w-xs flex-col gap-6 my-1">
+      <div className="relative">
+        <Separator />
+        <span className="bg-background text-muted-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-xs">
+          {children}
+        </span>
+      </div>
+    </div>
+  );
+}

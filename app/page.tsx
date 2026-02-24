@@ -1,65 +1,68 @@
+import { ContentBody } from "@/components/ui/content";
+import { ProjectsSection } from "@/sections/projects";
+import { SparklesText } from "@/components/ui/sparkles-text";
+
 import Image from "next/image";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const SmoothCursor = dynamic(() => import("@/components/ui/smooth-cursor"), {});
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-dvh relative text-neutral-800">
+      <SmoothCursor />
+      <div className="-z-1 mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)] fixed inset-0 h-full w-full bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
+      <div className="max-w-180 w-full mx-auto">
+        <header className="md:p-10 p-7 md:text-xl text-lg flex justify-between items-center font-semibold">
+          <h2 className="font-secondary flex flex-col md:gap-2 gap-1.5">
+            SHAIK MARWAAN
+            <span className="font-mono text-xs text-sky-500 uppercase font-medium">
+              Software Engineer
+            </span>
+          </h2>
+          <div className="flex gap-5">
+            <Link href={"https://github.com/shaikali-c"}>
+              <Image
+                src={"/assets/social/github.svg"}
+                width={22}
+                height={22}
+                alt="Github"
+              />
+            </Link>
+            <Link href={"https://x.com/astrostrax"}>
+              <Image
+                src={"/assets/social/x.svg"}
+                width={22}
+                height={22}
+                alt="Github"
+              />
+            </Link>
+          </div>
+        </header>
+        <section className="font-sans md:px-10 px-7 flex flex-col gap-5">
+          <ContentBody>
+            {`
+              I'm a developer currently studying B.Tech in AI & ML, but most of my learning happens while building things.
+              I work across the stack with Next.js, React, Tailwind, APIs, and PostgreSQL, MongoDB, Express.js Supabase, and I like building fast, clean full-stack apps with strong performance and clean architecture..
+            `}
+          </ContentBody>
+          <ContentBody>
+            {`
+              Apart the web world, I spend time in C++, cryptography, and
+            blockchain concepts, which pushed me to think more seriously about
+            security and system design. Lately, I've also been focusing more into game
+            development and low-level programming because I want to grow into an
+            engineer who understands how things work from the UI all the way
+            down to memory :)
+            `}
+          </ContentBody>
+          <ProjectsSection />
+          <div className="my-20 flex justify-center">
+            <SparklesText sparklesCount={3}>Peak</SparklesText>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
