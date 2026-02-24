@@ -1,10 +1,10 @@
 import { ContentBody } from "@/components/ui/content";
 import { ProjectsSection } from "@/sections/projects";
-import { SparklesText } from "@/components/ui/sparkles-text";
 
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Asterisk } from "lucide-react";
 
 const SmoothCursor = dynamic(() => import("@/components/ui/smooth-cursor"), {});
 
@@ -58,8 +58,8 @@ export default function Home() {
             `}
           </ContentBody>
           <ProjectsSection />
-          <div className="my-20 flex justify-center">
-            <SparklesText sparklesCount={3}>Peak</SparklesText>
+          <div className="my-20 flex justify-center text-neutral-800">
+            <Asterisk size={50} />
           </div>
         </section>
       </div>
